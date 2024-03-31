@@ -5,7 +5,6 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 // All the pages of the app
 import CalendarPage from './Components/CalendarPage';
-import UserSignUp from './Components/UserProfile';
 import UserProfile from './Components/UserProfile';
 
 function HomeScreen({ navigation }) {
