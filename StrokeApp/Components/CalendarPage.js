@@ -24,10 +24,6 @@ const CalendarPage = () => {
         showWeekNumbers={true}
         // Handler which gets executed when visible month changes in calendar. Default = undefined
         onMonthChange={(month) => console.log('month changed', month)}
-        // Hide month navigation arrows. Default = false
-        hideArrows={false}
-        // Replace default arrows with custom ones (direction can be 'left' or 'right')
-        renderArrow={(direction) => (<Arrow />)}
         // Enable the option to swipe between months. Default = false
         enableSwipeMonths={true}
       />

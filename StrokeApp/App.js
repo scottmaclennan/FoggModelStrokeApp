@@ -10,15 +10,11 @@ function HomeScreen({ navigation }) {
       <Text>Home Screen</Text>
       <Button
         title="Go to Medical"
-        onPress={() => navigation.navigate('Medical')}
+        onPress={() => navigation.navigate('Calendar')}
       />
       <Button
         title="Go to Exercise"
         onPress={() => navigation.navigate('Exercise')}
-      />
-      <Button
-        title="Go to calendar"
-        onPress={() => navigation.navigate('Calendar')}
       />
     </View>
   );
@@ -63,8 +59,7 @@ function App() {
         component={HomeScreen}
         options={{title: 'Overview'}}
          />
-          <Stack.Screen name="Calendar" component={CalendarPage} />
-        <Stack.Screen name="Medical" component={MedicalTracker} />
+        <Stack.Screen name="Medical" component={CalendarPage} />
         <Stack.Screen name="Exercise" component={ExerciseTracker} />
       </Stack.Navigator>
     </NavigationContainer>
