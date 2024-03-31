@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import HomePage from './screens/MedicalTracker';
-import OtherScreen from './screens/ExerciseTracker'; // Import other screens here
+import MedicalTracker from './screens/MedicalTracker';
+import ExerciseTracker from './screens/ExerciseTracker'; // Import other screens here
 
 const Stack = createNativeStackNavigator();
 
