@@ -1,17 +1,19 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import { SafeAreaView, StyleSheet } from 'react-native';
+import FrontPage from '/FrontPage';
 
-const HelloWorldApp = () => {
+const App = () => {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}>
-      <Text>Hello, world!</Text>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <FrontPage />
+    </SafeAreaView>
   );
 };
-export default HelloWorldApp;
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
+
+export default App;
