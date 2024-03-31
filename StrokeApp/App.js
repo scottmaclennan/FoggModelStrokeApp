@@ -2,7 +2,10 @@ import * as React from 'react';
 import {Button, View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+// All the pages of the app
 import CalendarPage from './Components/CalendarPage';
+import UserSignUp from './Components/UserSignUp';
 
 function HomeScreen({ navigation }) {
   return (
@@ -15,6 +18,10 @@ function HomeScreen({ navigation }) {
       <Button
         title="Go to Exercise"
         onPress={() => navigation.navigate('Exercise')}
+      />
+      <Button
+        title="Go to User SignUP"
+        onPress={() => navigation.navigate('SignUp')}
       />
     </View>
   );
@@ -61,6 +68,7 @@ function App() {
          />
         <Stack.Screen name="Medical" component={CalendarPage} />
         <Stack.Screen name="Exercise" component={ExerciseTracker} />
+        <Stack.Screen name="SignUp" component={UserSignUp} />
       </Stack.Navigator>
     </NavigationContainer>
   );
