@@ -10,7 +10,7 @@ function HomeScreen({ navigation }) {
       <Text>Home Screen</Text>
       <Button
         title="Go to Medical"
-        onPress={() => navigation.navigate('Calendar')}
+        onPress={() => navigation.navigate('Medical')}
       />
       <Button
         title="Go to Exercise"
