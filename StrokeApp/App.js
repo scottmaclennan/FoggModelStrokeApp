@@ -5,7 +5,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 // All the pages of the app
 import CalendarPage from './Components/CalendarPage';
-import UserSignUp from './Components/UserSignUp';
+import UserSignUp from './Components/UserProfile';
+import UserProfile from './Components/UserProfile';
 
 function HomeScreen({ navigation }) {
   return (
@@ -68,7 +69,7 @@ function App() {
          />
         <Stack.Screen name="Medical" component={CalendarPage} />
         <Stack.Screen name="Exercise" component={ExerciseTracker} />
-        <Stack.Screen name="SignUp" component={UserSignUp} />
+        <Stack.Screen name="SignUp" component={UserProfile} />
       </Stack.Navigator>
     </NavigationContainer>
   );
