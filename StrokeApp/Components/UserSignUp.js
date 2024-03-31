@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
 
-const SignupForm = () => {
+const UserSignUp = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   const Submit = (data) => {
@@ -28,3 +28,5 @@ const SignupForm = () => {
     </form>
   );
 }
+
+export default UserSignUp;
