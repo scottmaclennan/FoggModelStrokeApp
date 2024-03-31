@@ -16,9 +16,6 @@ const CalendarPage = () => {
 
     setMarkedDates(newMarkedDates);
 
-    // Here you can also handle any side effects of marking a day,
-    // like updating a backend service or local storage.
-
     Alert.alert(
       "Medication Status",
       !isMedTaken ? "Marked as taken." : "Marked as not taken.",
@@ -30,7 +27,7 @@ const CalendarPage = () => {
     <View style={styles.container}>
       <Calendar
         current={new Date()}
-        minDate={'2022-01-01'}
+        minDate={'2024-01-01'}
         maxDate={'2024-12-31'}
         onDayPress={handleDayPress}
         markedDates={markedDates}
