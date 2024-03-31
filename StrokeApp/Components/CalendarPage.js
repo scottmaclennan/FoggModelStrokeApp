@@ -1,30 +1,40 @@
-import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import React, { useState } from 'react';
+import { View, StyleSheet, Alert } from 'react-native';
 import { Calendar } from 'react-native-calendars';
 
 const CalendarPage = () => {
+  const [markedDates, setMarkedDates] = useState({});
+
+  const handleDayPress = (day) => {
+    const { dateString } = day;
+    const isMedTaken = markedDates[dateString]?.marked;
+
+    const newMarkedDates = {
+      ...markedDates,
+      [dateString]: { marked: !isMedTaken, dotColor: !isMedTaken ? 'green' : 'red' },
+    };
+
+    setMarkedDates(newMarkedDates);
+
+    // Here you can also handle any side effects of marking a day,
+    // like updating a backend service or local storage.
+
+    Alert.alert(
+      "Medication Status",
+      !isMedTaken ? "Marked as taken." : "Marked as not taken.",
+      [{ text: "OK" }]
+    );
+  };
+
   return (
     <View style={styles.container}>
       <Calendar
-        // Initially visible month. Default = Date()
-        current={'2024-03-01'}
-        // Minimum date that can be selected, dates before minDate will be grayed out. Default = undefined
-        minDate={'2022-05-10'}
-        // Maximum date that can be selected, dates after maxDate will be grayed out. Default = undefined
-        maxDate={'2024-05-30'}
-        // Handler which gets executed on day press. Default = undefined
-        onDayPress={(day) => console.log('selected day', day)}
-        // Month format in calendar title. Formatting values: http://arshaw.com/xdate/#Formatting
-        monthFormat={'yyyy MM'}
-        // Do not show days of other months in month page. Default = false
-        hideExtraDays={true}
-        // If firstDay=1 week starts from Monday. Note that dayNames and dayNamesShort should still start from Sunday.
-        firstDay={1}
-        // Show week numbers to the left. Default = false
-        showWeekNumbers={true}
-        // Handler which gets executed when visible month changes in calendar. Default = undefined
-        onMonthChange={(month) => console.log('month changed', month)}
-        // Enable the option to swipe between months. Default = false
+        current={new Date()}
+        minDate={'2022-01-01'}
+        maxDate={'2024-12-31'}
+        onDayPress={handleDayPress}
+        markedDates={markedDates}
+        markingType={'simple'}
         enableSwipeMonths={true}
       />
     </View>
@@ -34,8 +44,9 @@ const CalendarPage = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 50, // Adjust based on your navbar's height
+    paddingTop: 50,
   },
 });
 
 export default CalendarPage;
+
