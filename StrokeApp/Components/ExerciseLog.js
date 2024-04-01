@@ -11,7 +11,6 @@ const ExerciseLog = () => {
   const addExerciseLog = () => {
     const newLog = { exerciseName, duration, reps, sets, id: logs.length + 1 };
     setLogs([...logs, newLog]);
-    // Clear the input fields
     setExerciseName('');
     setDuration('');
     setReps('');
